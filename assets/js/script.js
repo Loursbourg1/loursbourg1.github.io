@@ -139,6 +139,11 @@ for (let i = 0; i < formInputs.length; i++) {
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
+/ Set Portfolio as the default active section on page load
+pages.forEach(page => page.classList.remove("active")); // Clear any existing active classes
+document.querySelector('[data-page="portfolio"]').classList.add("active"); // Set Portfolio active
+navigationLinks.forEach(link => link.classList.remove("active")); // Clear any active link
+document.querySelector('.navbar-link:nth-child(3)').classList.add("active"); // Highlight Portfolio link
 
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
